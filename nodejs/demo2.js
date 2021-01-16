@@ -7,4 +7,16 @@ var x = res("hello world");
 var y = rand.generate();
 
 // console.log(y);
-console.log("james joel");
+/*
+module.exports = function(a){
+
+
+
+    
+}
+
+
+
+
+*/
+
