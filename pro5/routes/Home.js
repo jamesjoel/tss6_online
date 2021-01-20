@@ -1,7 +1,7 @@
 var routes = require("express").Router();
 
-routes.get("/", (req, res)=>{
-    res.send("<h2>Home Page</h2>");
-});
+var HomeCtrl = require("../controllers/HomeController");
+
+routes.get("/", HomeCtrl.index);
 
 module.exports = routes;

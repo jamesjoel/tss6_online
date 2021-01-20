@@ -1,14 +1,14 @@
 var routes = require("express").Router();
+var ContactCtrl = require("../controllers/ContactController");
 
-routes.get("/", (req, res)=>{
-    res.send("<h2>Contact Page</h2>");
-});
-routes.get("/local", (req, res)=>{
-    res.send("<h2>Contact -> local Page</h2>");
-});
-routes.get("/global", (req, res)=>{
-    res.send("<h2>Contact -> global Page</h2>");
-});
+
+routes.get("/", ContactCtrl.index);
+
+
+routes.get("/local", ContactCtrl.abc);
+
+
+routes.get("/global", ContactCtrl.xyz);
 
 
 
