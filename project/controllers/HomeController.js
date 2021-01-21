@@ -1,3 +1,4 @@
 exports.index = (req, res)=>{
-    res.render("layout");
+    var pageData = { title : "Home", pagename : "home/index"};
+    res.render("layout", pageData);
 }
