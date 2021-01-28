@@ -13,8 +13,10 @@ exports.save = (req, res)=>{
     // console.log(req.body);
 
     req.body.password = sha1(req.body.password);
-    UserModel.save(req.body);
-    res.redirect("/");
+    UserModel.save(req.body, function(err, result){
+
+        res.redirect("/");
+    });
 
     // MongoClient.connect(url, (err, con)=>{
     //     if(err){
