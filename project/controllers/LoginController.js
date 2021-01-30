@@ -2,7 +2,7 @@ var UserModel = require("../models/UserModel");
 var sha1 = require("sha1");
 
 exports.index = (req, res)=>{
-    var pageData = { title : "Login", pagename : "login/index"};
+    var pageData = { title : "Login", pagename : "login/index", message : req.flash("msg")};
     res.render("layout", pageData);
 }
 
@@ -18,18 +18,24 @@ exports.auth = (req, res)=>{
         {
             if(result[0].password == sha1(p))
             {
-                console.log("-------------");
+                req.session.userid = result[0]._id;
+                req.session.name = result[0].full_name;
+                req.session.is_user_logged_in = true;
+
+                res.redirect("/");
             }
             else
             {
-                console.log("xxxxxxxxxx");
+                req.flash("msg", "This Password is Incorrect !");
+                res.redirect("/login");
 
             }
         }
         else
         {
             
-            console.log("username is not correct ");
+            req.flash("msg", "This Username and Password is Incorrect !");
+            res.redirect("/login");
         }
     });
 

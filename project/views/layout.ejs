@@ -47,9 +47,14 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <a href="/signup" class="login-panel"><i class="fa fa-lock"></i>Signup</a>
-                    
+                    <% if(session.is_user_logged_in){ %>
+                        <a href="/logout" class="login-panel"><i class="fa fa-lock"></i>Logout</a>
+                        <a href="/profile" class="login-panel"><i class="fa fa-cog"></i>Profile</a>
+                        <a href="#" class="login-panel"><i class="fa fa-user"></i><%= session.name %></a>
+                    <% }else{ %>
+                        <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                        <a href="/signup" class="login-panel"><i class="fa fa-lock"></i>Signup</a>
+                    <% } %>
                     
                 </div>
             </div>
