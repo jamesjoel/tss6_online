@@ -22,7 +22,7 @@ exports.auth = (req, res)=>{
                 req.session.name = result[0].full_name;
                 req.session.is_user_logged_in = true;
 
-                res.redirect("/");
+                res.redirect("/dashboard");
             }
             else
             {
