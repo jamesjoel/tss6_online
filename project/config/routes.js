@@ -11,6 +11,7 @@ routes.use("/signup", require("../routes/Singup"));
 routes.use("/profile", backdoor, require("../routes/Profile"));
 routes.use("/dashboard", backdoor, require("../routes/Dashboard"));
 routes.use("/upload", backdoor, require("../routes/Upload"));
+routes.use("/share", backdoor, require("../routes/Share"));
 
 
 

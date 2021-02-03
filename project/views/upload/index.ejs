@@ -12,6 +12,9 @@
                     <div class="form-group">
                         <label>Select File</label>
                         <input type="file" name="file" class="form-control"/>
+                        <p class="text-danger">
+                            <%= message %>
+                        </p>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -30,8 +33,42 @@
                     <th>S.No.</th>
                     <th>File Name</th>
                     <th>Files</th>
+                    <th>Share</th>
                 </tr>
+                <% result.forEach(function(x, n){ %>
+                    <tr>
+                        <td><%= n+1 %></td>
+                        <td><%= x.name %></td>
+                        <td><a download href="/<%= type %>/<%= x.filename %>">Download</a></td>
+                        <td><a href="/share/<%= x._id %>"><i class="fa fa-share" aria-hidden="true"></i></a></td>
+                    </tr>
+                <% }) %>
             </table>
         </div>
     </div>
 </div>
+
+
+<!--
+    for, while, do...while, forEach 
+
+    var result = [
+        {
+
+        },
+        {
+
+        },
+        {
+
+        }
+    ];
+
+    arr.forEach(function(x, n){
+
+
+    })
+
+
+
+ -->

@@ -9,7 +9,10 @@ var flash = require("express-flash");
 var upload = require("express-fileupload");
 
 app.set("view engine", "ejs");
+
 app.use(express.static(__dirname+"/assets"));
+
+app.use(express.static(__dirname+"/files"));
 
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
