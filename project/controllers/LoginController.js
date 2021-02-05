@@ -20,6 +20,7 @@ exports.auth = (req, res)=>{
             {
                 req.session.userid = result[0]._id;
                 req.session.name = result[0].full_name;
+                req.session.email = result[0].username;
                 req.session.is_user_logged_in = true;
 
                 res.redirect("/dashboard");
