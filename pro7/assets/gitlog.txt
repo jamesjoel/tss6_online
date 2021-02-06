@@ -1,0 +1,24 @@
+C:\xampp\htdocs\amplify>git diff --name-only HEAD~5
+application/controllers/Productmanage.php
+application/controllers/Storesetup.php
+application/models/Order_enquiry_model.php
+application/models/Product_first_category_model.php
+application/views/certificate/index.php
+application/views/employeemanage/list.php
+application/views/employeemanage/newrole.php
+application/views/employeemanage/reward.php
+application/views/layouts/layout.php
+application/views/navs/productmanage.php
+application/views/productmanage/add_order_enquiry.php
+application/views/productmanage/add_product.php
+application/views/productmanage/customers.php
+application/views/productmanage/order_enquiry_list.php
+application/views/productmanage/product_list.php
+application/views/productmanage/sales_order_form.php
+application/views/productmanage/sales_order_list.php
+application/views/storesetup/add_order_enquiry.php
+application/views/storesetup/address.php
+applicationapplication/models/Delivery_model.php
+        application/models/Product_emi_model.php
+        application/views/productmanage/delivery_status_update.php
+        application/views/productmanage/manage_price.php
