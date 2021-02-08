@@ -16,6 +16,18 @@ module.exports.delete=function(where, cb){
         
     });
 }
+
+
+module.exports.deleteone=function(where, cb){
+    database(function(err, con){
+        var db = con.db("tss6");
+        db.collection("file").removeOne(where, cb);
+        
+        
+    });
+}
+
+
 module.exports.update = function(where, obj, cb){
     database(function(err, con){
         var db = con.db("tss6");

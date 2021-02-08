@@ -34,6 +34,8 @@
                     <th>File Name</th>
                     <th>Files</th>
                     <th>Share</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 <% result.forEach(function(x, n){ %>
                     <tr>
@@ -41,6 +43,8 @@
                         <td><%= x.name %></td>
                         <td><a download href="/<%= type %>/<%= x.filename %>">Download</a></td>
                         <td><a href="/share/<%= x._id %>"><i class="fa fa-share" aria-hidden="true"></i></a></td>
+                        <td><a href="/file/edit/<%= x._id %>/<%= type %>" class="btn btn-sm btn-info">Edit</a></td>
+                        <td><a href="/file/delete/<%= x._id %>/<%= type %>" class="btn btn-sm btn-danger">Delete</a></td>
                     </tr>
                 <% }) %>
             </table>
