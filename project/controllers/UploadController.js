@@ -32,8 +32,12 @@ exports.do_upload=(req, res)=>{
     var size = req.files.file.size;
     var mv = req.files.file.mv;
 
+
     var arr = name.split("."); // hello.10.doc   --- ["hello", "10", "doc"]
     var ext = arr[arr.length-1];
+
+
+    
     var newname = rand.generate(20)+"."+ext; // Acef1245421Dfgdf.doc
     var filepath = path.resolve()+"/files/"+type+"/"+newname;
 

@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h3>SQL in Node</h3>
+        <table align="center" border="1">
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            <% result.forEach(function(x, n){ %>
+                <tr>
+                    <td><%= n+1 %></td>
+                    <td><%= x.name %></td>
+                    <td><%= x.age %></td>
+                    <td><%= x.city %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </body>
+</html>
