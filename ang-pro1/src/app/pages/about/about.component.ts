@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  a = 100;
+  b = 'indore';
+
+  x = 500;
+  y = 200;
   constructor() { }
 
   ngOnInit() {

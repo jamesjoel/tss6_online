@@ -26,11 +26,37 @@ export class HomeComponent implements OnInit {
   name = "rohit";
   age = 25;
 
-  data = {
-    city : "indore",
-    gender : "male"
-  }
+  arr = ["red", "green", "blue"];
+  city = ["indore", "ujjain", "bhopal", "mumbai", "pune"];
 
+  data = [
+    {
+      name : "rohit",
+      age : 25,
+      city : "indore"
+    },
+    {
+      name : "rohit",
+      age : 25,
+      city : "indore"
+    },
+    {
+      name : "rohit",
+      age : 25,
+      city : "indore"
+    },
+    {
+      name : "rohit",
+      age : 25,
+      city : "indore"
+    },
+    {
+      name : "rohit",
+      age : 25,
+      city : "indore"
+    }
+  ]
+  
   constructor() { }
 
   ngOnInit() {
@@ -38,15 +64,3 @@ export class HomeComponent implements OnInit {
 
 }
 
-/*
-
-app.get("/api/teacher", (req, res){
-
-                  (function(err, result){
-                    res.send(result)
-                  })
-});
-
-
-
-*/

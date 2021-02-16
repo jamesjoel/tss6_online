@@ -1,2 +1,15 @@
 <h2>About Page</h2>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, delectus ea ad nemo adipisci, quam, id possimus expedita officiis odit voluptatem qui nisi ipsa quae? Maxime veritatis atque voluptates minima?</p>
+<!-- *ngIf -->
+<p *ngIf="a==100 && b == 'rohit'">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, delectus ea ad nemo adipisci, quam, id possimus expedita officiis odit voluptatem qui nisi ipsa quae? Maxime veritatis atque voluptates minima?</p>
+<hr >
+<h4 *ngIf="x==500; else box">Yes</h4>
+<ng-template #box>
+    <h4>No</h4>
+</ng-template>
+<hr />
+<ng-template [ngIf]="y==300" [ngIfElse]="box2">
+    <p>This is Yes</p>
+</ng-template>
+<ng-template #box2>
+    <p>This is No</p>
+</ng-template>

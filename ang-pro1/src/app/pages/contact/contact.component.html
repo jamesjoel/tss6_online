@@ -1,5 +1,32 @@
 <h2>Contact Page</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eligendi cupiditate doloribus, harum impedit ut quas tempore amet error dolorum perspiciatis, facere similique corrupti commodi illum repudiandae ipsum non deserunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor inventore error nisi, excepturi numquam aspernatur ab commodi impedit dolorem quia dicta perferendis soluta magni, deserunt blanditiis sunt sit est minima.
-   
-</p>
-<h3>Hello world</h3>
+<div [ngSwitch]="a">
+    <h3 *ngSwitchCase="'a'">Indore</h3>
+    <h3 *ngSwitchCase="'b'">Mumbai</h3>
+    <h3 *ngSwitchCase="'c'">Pune</h3>
+    <h3 *ngSwitchCase="'d'">Delhi</h3>
+    <h3 *ngSwitchCase="'e'">Ujjain</h3>
+    <h3 *ngSwitchDefault>No City</h3>
+</div>
+<!-- Event Binding -->
+<button (click)="demo()">OK</button>
+<div id="box" (mouseout)="demo2()"></div>
+<input type="text" (keyup)="demo2()"/>
+<p (copy)="demo3()">Lorem ipsum dolor indore sit, amet consectetur adipisicing elit. Iste quo quasi dolorum, laborum cupiditate odio quae sequi dolor numquam suscipit deserunt! Doloremque autem ea iste architecto voluptatum, assumenda facere maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea numquam, quod eos doloremque reiciendis odit veniam voluptates ullam accusamus, quae nemo deserunt beatae pariatur labore cumque ipsam eveniet itaque placeat!</p>
+<!-- 
+
+    var a = 3;
+    switch(a){
+        case 1 : "indore";
+                    break;
+        case 2 : "indore";
+                    break;
+        case 3 : "indore";
+                    break;
+        case 4 : "indore";
+                    break;
+    }
+
+
+
+
+ -->
