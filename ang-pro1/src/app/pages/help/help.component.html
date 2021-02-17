@@ -1,1 +1,24 @@
+<h2>{{ a }}</h2>
 <p>help works!</p>
+<button (click)="demo()">OK</button>
+<div *ngIf="check">
+    <h2>hello world</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consequuntur quos, quod neque doloremque enim fuga id, soluta odio vel ratione incidunt eligendi pariatur numquam! Sunt laudantium sapiente architecto cumque.</p>
+</div>
+<pre>{{ user | json }}</pre>
+<br />
+<br />
+<input type="text" [(ngModel)]="user.name"/>
+<br />
+<br />
+<input type="text" [(ngModel)]="user.age"/>
+<br />
+<br />
+<select [(ngModel)]="user.city">
+    <option>Select</option>
+    <option>Indore</option>
+    <option>Mumbai</option>
+    <option>Pune</option>
+</select>
+
+

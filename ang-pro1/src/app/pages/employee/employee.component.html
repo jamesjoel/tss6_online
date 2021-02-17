@@ -1,0 +1,93 @@
+<div class="row mt-5">
+    <div class="col-md-10 offset-md-1 mt-3">
+        <button (click)="empty()" data-toggle="modal" data-target="#addModal" class="btn btn-primary">Add Employee</button>
+        <br />
+        <!-- <pre>{{ emp | json }}</pre> -->
+        <br />
+        <table class="table table-bordered table-hover table-dark table-stripped">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let e of employes; let n = index">
+                <td>{{ n+1 }}</td>
+                <td>{{ e.name }}</td>
+                <td>{{ e.age }}</td>
+                <td>{{ e.city }}</td>
+                <td>{{ e.gender }}</td>
+                <td>{{ e.address }}</td>
+                <td><button (click)="askDelete(e)" data-toggle="modal" data-target="#delModal" class="btn btn-danger btn-sm">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Employee</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" [(ngModel)]="emp.name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" [(ngModel)]="emp.age" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control" [(ngModel)]="emp.city">
+                        <option value="">Select</option>
+                        <option value="indore">Indore</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="pune">Pune</option>
+                        <option value="delhi">Delhi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <br />
+                    Male <input type="radio" [(ngModel)]="emp.gender" value="male"/>
+                    Female <input type="radio" [(ngModel)]="emp.gender" value="female"/>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-control" [(ngModel)]="emp.address"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button (click)="save()" class="btn btn-success" data-dismiss="modal">Save</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="delModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Employee</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure want to delete <b>{{ emp.name }}</b> !</p>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,11 +4,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HelpComponent } from './pages/help/help.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
 
 const routes: Routes = [
   {
     path : "", // localhost:4200
     component : HomeComponent
+  },
+  {
+    path : "employee",
+    component : EmployeeComponent
   },
   {
     path : "about", // localhost:4200/about
