@@ -13,6 +13,7 @@
                 <th>Gender</th>
                 <th>Address</th>
                 <th>Delete</th>
+                <th>Edit</th>
             </tr>
             <tr *ngFor="let e of employes; let n = index">
                 <td>{{ n+1 }}</td>
@@ -22,6 +23,7 @@
                 <td>{{ e.gender }}</td>
                 <td>{{ e.address }}</td>
                 <td><button (click)="askDelete(e)" data-toggle="modal" data-target="#delModal" class="btn btn-danger btn-sm">Delete</button></td>
+                <td><button (click)="askEdit(e)" data-toggle="modal" data-target="#addModal" class="btn btn-info btn-sm">Edit</button></td>
             </tr>
         </table>
     </div>
@@ -32,7 +34,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Add New Employee</h3>
+                <h3>{{ emp._id ? "Update" : "Add New" }} Employee</h3>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -66,7 +68,7 @@
 
             </div>
             <div class="modal-footer">
-                <button (click)="save()" class="btn btn-success" data-dismiss="modal">Save</button>
+                <button (click)="save()" class="btn btn-success" data-dismiss="modal">{{ emp._id ? 'Update' : 'Save' }}</button>
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -85,9 +87,40 @@
 
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button class="btn btn-danger" (click)="delete()" data-dismiss="modal">Delete</button>
                 <button class="btn btn-outline-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- 
+if(a==true)
+{
+
+}
+
+if(a)
+{
+
+}
+
+
+
+
+var a = 20;
+if(a==20)
+{
+    b = "indore";
+}
+else
+{
+    b = "ujjain";
+}
+
+var b = a == 20 ? "indore" : "ujjain";
+
+
+var x = y == 100 ? y : 200;
+
+ -->
