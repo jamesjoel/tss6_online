@@ -1,0 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+
+@Component({
+  selector: 'app-mini-box',
+  templateUrl: './mini-box.component.html',
+  styleUrls: ['./mini-box.component.scss']
+})
+export class MiniBoxComponent implements OnInit {
+
+  @Input() miniBox;
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

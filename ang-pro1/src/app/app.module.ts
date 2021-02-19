@@ -13,6 +13,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HelpComponent } from './pages/help/help.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { DemoComponent } from './pages/demo/demo.component';
+import { MiniSharedComponent } from './shared/mini-shared/mini-shared.component';
+import { MiniBoxComponent } from './shared/mini-box/mini-box.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { EmployeeComponent } from './pages/employee/employee.component';
     AboutComponent,
     ContactComponent,
     HelpComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    DemoComponent,
+    MiniSharedComponent,
+    MiniBoxComponent
   ],
   imports: [
     BrowserModule,

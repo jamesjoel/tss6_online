@@ -5,6 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HelpComponent } from './pages/help/help.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { DemoComponent } from './pages/demo/demo.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path : "help",
     component : HelpComponent
+  },
+  {
+    path : "demo",
+    component : DemoComponent
   }
 ];
 
@@ -39,3 +44,10 @@ export class AppRoutingModule { }
 // var express = require("express");
 
 // import { express } from 'express';
+
+/*
+app-button
+app-h1
+
+
+*/

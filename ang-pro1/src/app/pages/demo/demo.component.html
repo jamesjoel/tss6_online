@@ -1,0 +1,17 @@
+<h1>This is Parent Component</h1>
+<br />
+<input type="text" [(ngModel)]="a"/>
+<button (click)="go()">OK</button>
+<Br />
+<hr />
+    <div class="row">
+        <app-mini-shared *ngFor="let s of students"  [miniStudent]="s"></app-mini-shared>
+
+    </div>
+
+<hr />
+<br />
+<div class="row">
+    <app-mini-box [miniBox]="b"></app-mini-box>
+
+</div>
