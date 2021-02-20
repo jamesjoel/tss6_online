@@ -16,6 +16,8 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { MiniSharedComponent } from './shared/mini-shared/mini-shared.component';
 import { MiniBoxComponent } from './shared/mini-box/mini-box.component';
+import { Demo2Component } from './pages/demo2/demo2.component';
+import { StudentboxComponent } from './shared/studentbox/studentbox.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MiniBoxComponent } from './shared/mini-box/mini-box.component';
     EmployeeComponent,
     DemoComponent,
     MiniSharedComponent,
-    MiniBoxComponent
+    MiniBoxComponent,
+    Demo2Component,
+    StudentboxComponent
   ],
   imports: [
     BrowserModule,
