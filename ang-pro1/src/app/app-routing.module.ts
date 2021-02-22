@@ -7,6 +7,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { Demo2Component } from './pages/demo2/demo2.component';
+import { Demo3Component } from './pages/demo3/demo3.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path : "demo2",
     component : Demo2Component
+  },
+  {
+    path : "demo3",
+    component : Demo3Component
   }
 ];
 

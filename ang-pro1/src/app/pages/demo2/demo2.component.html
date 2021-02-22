@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+          
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" class="form-control" [(ngModel)]="user.name" />
@@ -16,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <app-studentbox [userInfo]="u" *ngFor="let u of userArr"></app-studentbox>
+            <app-studentbox (deleteEvent)="delete($event)" [userInfo]="u" *ngFor="let u of userArr"></app-studentbox>
         </div>
     </div>
 </div>

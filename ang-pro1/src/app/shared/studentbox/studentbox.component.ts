@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-studentbox',
@@ -9,9 +9,14 @@ import { Input } from '@angular/core';
 export class StudentboxComponent implements OnInit {
 
   @Input() userInfo;
+  @Output() deleteEvent = new EventEmitter;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  delete(id){
+    this.deleteEvent.emit(id);
   }
 
 }

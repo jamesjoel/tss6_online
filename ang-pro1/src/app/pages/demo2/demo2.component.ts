@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Demo2Component implements OnInit {
 
+  counter=0;
  user = {
+   _id : null,
    name : "",
    age : null
  }
@@ -18,12 +20,18 @@ export class Demo2Component implements OnInit {
   }
   show(){
     // console.log(this.user);
+    this.user._id = this.counter;
+    this.counter++;
     let obj = {... this.user};
     this.userArr.push(obj);
     this.user = {
+      _id : null,
       name : "",
       age : null
     }
+  }
+  delete(n){
+    this.userArr.splice(n, 1);
   }
 
 }
