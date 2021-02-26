@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApicallService } from '../../service/apicall.service';
 
 @Component({
   selector: 'app-help',
@@ -16,7 +17,13 @@ export class HelpComponent implements OnInit {
     city : ""
   }
 
-  constructor() { }
+  abc;
+
+  constructor(private _api : ApicallService) {
+    this._api.getData().subscribe((result)=>{
+      this.abc = result;
+    })
+   }
 
   ngOnInit() {
   }

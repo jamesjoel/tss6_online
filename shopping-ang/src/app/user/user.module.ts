@@ -12,7 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ProductBoxComponent } from './shared/product-box/product-box.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ProductService } from '../services/product.service';
 
 
 @NgModule({
@@ -22,6 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     UserRoutingModule,
     HttpClientModule
   ],
-  providers : []
+  providers : [ProductService]
 })
 export class UserModule { }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { Demo2Component } from './pages/demo2/demo2.component';
 import { StudentboxComponent } from './shared/studentbox/studentbox.component';
 import { Demo3Component } from './pages/demo3/demo3.component';
 import { Demo3MiniComponent } from './shared/demo3-mini/demo3-mini.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { Demo3MiniComponent } from './shared/demo3-mini/demo3-mini.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

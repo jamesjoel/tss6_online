@@ -17,12 +17,9 @@
             </div>
         </div>
         <div class="row featured__filter">
-            <app-product-box></app-product-box>
-            <app-product-box></app-product-box>
-            <app-product-box></app-product-box>
-            <app-product-box></app-product-box>
-            <app-product-box></app-product-box>
-            <app-product-box></app-product-box>
+            <!-- <pre>{{ allProduct | json }}</pre> -->
+            <app-product-box [p]="p" *ngFor="let p of allProduct"></app-product-box>
+            
         </div>
     </div>
 </section>
