@@ -13,6 +13,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ProductBoxComponent } from './shared/product-box/product-box.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
+import { CategoryService } from '../services/category.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,8 +23,9 @@ import { ProductService } from '../services/product.service';
   imports: [
     CommonModule,
     UserRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers : [ProductService]
+  providers : [ProductService, CategoryService]
 })
 export class UserModule { }
