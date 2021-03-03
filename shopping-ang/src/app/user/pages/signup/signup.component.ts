@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { demo, hello, conLength, conNum } from '../../../helper/validation.helper';
 
 
 @Component({
@@ -22,14 +23,18 @@ export class SignupComponent implements OnInit {
   constructor(private _fb : FormBuilder) {
     this.userReg = this._fb.group({
       name : ["", Validators.required],
-      username : ["", Validators.required],
+      username : ["", [Validators.required, Validators.email]],
       password : ["", Validators.required],
       re_password : ["", Validators.required],
       city : ["", Validators.required],
       address : ["", Validators.required],
       gender : ["", Validators.required],
       contact : ["", Validators.required]
-    })
+    },
+    {
+      validator : [demo(), hello(), conLength(), conNum()]
+    }
+    )
    }
 
   ngOnInit() {
