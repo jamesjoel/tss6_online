@@ -14,9 +14,7 @@
                             <div *ngIf="userReg.controls.name.errors.required">
                                 Please Insert Your Full Name
                             </div>
-                            <div *ngIf="userReg.controls.name.errors.xyz">
-                                Please Insert Rohit Only
-                            </div>
+                           
                         </div>
                     </div>
                     
@@ -47,6 +45,9 @@
                         <div *ngIf="submitCheck && userReg.controls.re_password.errors" class="invalid-feedback">
                             <div *ngIf="userReg.controls.re_password.errors.required">
                                 Please Insert Your Re-Password
+                            </div>
+                            <div *ngIf="userReg.controls.re_password.errors.reErr">
+                                Password and Re-Password should be same
                             </div>
                         </div>
                     </div>
@@ -99,9 +100,7 @@
                             <div *ngIf="userReg.controls.city.errors.required">
                                 Please Select Your City
                             </div>
-                            <div *ngIf="userReg.controls.city.errors.getError">
-                                Select Only Indore
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

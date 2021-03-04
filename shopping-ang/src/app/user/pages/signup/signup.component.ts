@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { demo, hello, conLength, conNum } from '../../../helper/validation.helper';
+import { conLength, conNum, chekPass } from '../../../helper/validation.helper';
+import { SignupService } from '../../services/signup.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +22,7 @@ export class SignupComponent implements OnInit {
     this.x = true;
   }
 
-  constructor(private _fb : FormBuilder) {
+  constructor(private _fb : FormBuilder, private _signupServ : SignupService, private _router : Router) {
     this.userReg = this._fb.group({
       name : ["", Validators.required],
       username : ["", [Validators.required, Validators.email]],
@@ -32,7 +34,7 @@ export class SignupComponent implements OnInit {
       contact : ["", Validators.required]
     },
     {
-      validator : [demo(), hello(), conLength(), conNum()]
+      validator : [conNum(), conLength(), chekPass()]
     }
     )
    }
@@ -45,7 +47,12 @@ export class SignupComponent implements OnInit {
     if(this.userReg.invalid){
       return;
     }
-    console.log(this.userReg.value);
+    // console.log(this.userReg.value);
+    this._signupServ.save(this.userReg.value).subscribe((result)=>{
+      // console.log(result);
+      this._router.navigate(["/login"]);
+      // res.redirect("/login");
+    })
   }
 
 }

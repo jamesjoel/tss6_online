@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
 import { CategoryService } from '../services/category.service';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { SignupService } from './services/signup.service';
 
 
 @NgModule({
@@ -26,6 +26,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers : [ProductService, CategoryService]
+  providers : [ProductService, CategoryService, SignupService]
 })
 export class UserModule { }

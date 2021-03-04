@@ -1,4 +1,22 @@
 import { FormGroup }  from '@angular/forms';
+export function chekPass(){
+    return function(userReg : FormGroup){
+        let pass = userReg.controls.password;
+        let repass = userReg.controls.re_password;
+        if(repass.errors && ! repass.errors.reErr)
+        {
+            return;
+        }
+
+        if(pass.value != repass.value)
+        {
+            repass.setErrors({ reErr : true});
+        }
+        else{
+            repass.setErrors(null);
+        }
+    }
+}
 
 export function conNum()
 {
