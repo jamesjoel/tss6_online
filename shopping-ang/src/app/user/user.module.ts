@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
@@ -16,7 +17,7 @@ import { ProductService } from '../services/product.service';
 import { CategoryService } from '../services/category.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupService } from './services/signup.service';
-
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [UserComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent, SignupComponent, HeaderComponent, FooterComponent, ProductBoxComponent],
@@ -24,8 +25,9 @@ import { SignupService } from './services/signup.service';
     CommonModule,
     UserRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers : [ProductService, CategoryService, SignupService]
+  providers : [ProductService, CategoryService, SignupService, LoginService]
 })
 export class UserModule { }

@@ -8,15 +8,17 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Username/Email</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" [(ngModel)]="user.username" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" />
+                        <input type="password" [(ngModel)]="user.password" class="form-control" />
                     </div>
+                    <p class="text-danger text-center">{{ msg }}</p>
+
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success">Login</button>
+                    <button class="btn btn-success" (click)="do_login()">Login</button>
                 </div>
             </div>
 
