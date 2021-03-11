@@ -21,8 +21,10 @@ export class LoginComponent implements OnInit {
   do_login(){
     this._loginServ.login(this.user).subscribe((result)=>{
       // console.log("***********", result);
-      if(result.success==true)
+      if(result)
       {
+        // console.log(result);
+        localStorage.setItem("token", result);
         this._router.navigate(["/dashboard"]);
       }
     }, err=>{

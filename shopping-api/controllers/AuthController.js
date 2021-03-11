@@ -1,5 +1,6 @@
 var UserModel = require("../models/UserModel");
 var sha1 = require("sha1");
+var jwt = require("jsonwebtoken");
 exports.index = (req, res)=>{
     var obj = req.body;
     UserModel.find({ username : obj.username }, function(err, result){
@@ -7,8 +8,8 @@ exports.index = (req, res)=>{
         {   
             if(result[0].password == sha1(obj.password))
             {
-
-                res.status(200).json({ success : true });
+                var token = jwt.sign({ id : result[0]._id, username : result[0].username }, "the stepping stone");
+                res.status(200).json(token);
             }
             else
             {

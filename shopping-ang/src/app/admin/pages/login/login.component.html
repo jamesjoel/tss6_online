@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mt-5">
+                <div class="card-header">
+                    Admin Login
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" [(ngModel)]="admin.username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" [(ngModel)]="admin.password" class="form-control" />
+                    </div>
+                    <p class="text-danger text-center">{{ msg }}</p>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success" (click)="do_login()">Login</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

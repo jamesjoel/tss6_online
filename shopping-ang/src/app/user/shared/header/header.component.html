@@ -66,11 +66,21 @@
                   <div class="col-lg-6 col-md-6">
                       <div class="header__top__right">
                           
-                         
-                          <div class="header__top__right__auth">
-                              <a style="display: inline-block !important;" routerLink="/login"><i class="fa fa-user"></i> Login</a>
-                              <a style="display: inline-block !important; margin-left: 30px;" routerLink="/signup"><i class="fa fa-user"></i> Signup</a>
-                          </div>
+                         <ng-template [ngIf]="_loginServ.isLoggedIn()" [ngIfElse]="beforeLogin">
+                            <div class="header__top__right__auth">
+                                <a style="display: inline-block !important;" routerLink="/dashboard"> Dashboard</a>
+                                <a style="display: inline-block !important; margin-left: 30px;" routerLink="/profile"> Profile</a>
+                                <a style="display: inline-block !important; margin-left: 30px;" (click)="_loginServ.logout()"> Logout</a>
+                            </div>
+                         </ng-template>
+                         <ng-template #beforeLogin>
+                            <div class="header__top__right__auth">
+                                <a style="display: inline-block !important;" routerLink="/login"><i class="fa fa-user"></i> Login</a>
+                                <a style="display: inline-block !important; margin-left: 30px;" routerLink="/signup"><i class="fa fa-user"></i> Signup</a>
+                            </div>
+
+                         </ng-template>
+                          
                       </div>
                   </div>
               </div>

@@ -18,9 +18,12 @@ import { CategoryService } from '../services/category.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupService } from './services/signup.service';
 import { LoginService } from './services/login.service';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
-  declarations: [UserComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent, SignupComponent, HeaderComponent, FooterComponent, ProductBoxComponent],
+  declarations: [UserComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent, SignupComponent, HeaderComponent, FooterComponent, ProductBoxComponent, DashboardComponent, ProfileComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
@@ -28,6 +31,12 @@ import { LoginService } from './services/login.service';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers : [ProductService, CategoryService, SignupService, LoginService]
+  providers : [
+      ProductService, 
+      CategoryService, 
+      SignupService, 
+      LoginService, 
+      UserService
+    ]
 })
 export class UserModule { }

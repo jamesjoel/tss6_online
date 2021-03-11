@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../services/category.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { CategoryService } from '../../../services/category.service';
 export class HeaderComponent implements OnInit {
 
   cateArr=[];
-  constructor(private _cateServ : CategoryService) {
+  constructor(private _cateServ : CategoryService, public _loginServ : LoginService) {
     this._cateServ.getAll().subscribe((result)=>{
       this.cateArr= result;
     })
