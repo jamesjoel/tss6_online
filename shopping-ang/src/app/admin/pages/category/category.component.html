@@ -1,1 +1,43 @@
-<p>category works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="category">
+            <div class="card">
+                <div class="card-header">
+                    Add New Category
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <input formControlName="name" [ngClass]="{ 'is-invalid' : isSubmit && category.controls.name.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="isSubmit && category.controls.name.errors">
+                            <div *ngIf="category.controls.name.errors.required">
+                                Please Insert Category
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" (click)='submit()' value="Add" class="btn btn-success" />
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-hover table-dark table-bordered">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Category Name</th>
+                </tr>
+                <tr *ngFor="let c of allCategory; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ c.name }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

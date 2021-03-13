@@ -7,6 +7,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProductComponent } from './pages/product/product.component';
 import  { BackdoorGuard } from './guards/backdoor.guard';
 import { UserComponent } from './pages/user/user.component';
+
+import { AfterloginGuard } from './guards/afterlogin.guard';
  
 const routes: Routes = [
   {
@@ -14,7 +16,8 @@ const routes: Routes = [
     component : AdminComponent,
     children : [
       {
-        path : "", // :4200/admin
+        path : "", // :4200/admin --- login
+        canActivate : [AfterloginGuard],
         component : LoginComponent
       },
       {
