@@ -12,6 +12,7 @@ exports.getCategory = (req, res)=>{
     })
 }
 exports.add = (req, res)=>{
+    delete req.body._id;
     CategoryModel.save(req.body, function(err, result){
         // console.log(result.ops);
         res.send(result.ops[0]);

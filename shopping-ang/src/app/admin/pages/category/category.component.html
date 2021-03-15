@@ -4,7 +4,8 @@
             <form [formGroup]="category">
             <div class="card">
                 <div class="card-header">
-                    Add New Category
+                    
+                    {{ category.value._id ? "Update" : "Add New" }} Category
                 </div>
                 <div class="card-body">
                     <div class="form-group">
@@ -18,7 +19,10 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <input type="submit" (click)='submit()' value="Add" class="btn btn-success" />
+                    <input type="submit" (click)='submit()' value="{{ category.value._id ? 'Update' : 'Add New' }}" class="btn btn-success" />
+                    <span *ngIf="category.value._id">
+                        <button class="btn btn-danger ml-3" (click)="edit_cancel()">Cancel</button>
+                    </span>
                 </div>
             </div>
             </form>
@@ -28,16 +32,37 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <table class="table table-hover table-dark table-bordered">
+            <table class="table table-hover table-dark table-bordered mt-3">
                 <tr>
                     <th>S.No.</th>
                     <th>Category Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 <tr *ngFor="let c of allCategory; let n = index">
                     <td>{{ n+1 }}</td>
                     <td>{{ c.name }}</td>
+                    <td><button class="btn btn-sm btn-info" (click)="askEdit(c)">Edit</button></td>
+                    <td><button class="btn btn-sm btn-danger" (click)="askDelete(c)" data-toggle="modal" data-target="#delModal">Delete</button></td>
                 </tr>
             </table>
+        </div>
+    </div>
+
+</div>
+<div id="delModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Delete
+            </div>
+            <div class="modal-body">
+                <p>Are You sure want to delete this <b *ngIf="tempCategory">{{ tempCategory.name }}</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-danger" (click)="delete()" data-dismiss="modal">Delete</button>
+                <button class="btn btn-sm btn-dark" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>
