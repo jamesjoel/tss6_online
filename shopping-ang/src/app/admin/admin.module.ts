@@ -17,9 +17,12 @@ import { LoginService } from './services/login.service';
 import { UsersService } from './services/users.service';
 import { UserComponent } from './pages/user/user.component';
 import { CategoryService } from './services/category.service';
+import { ProductService } from './services/product.service';
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
 
 @NgModule({
-  declarations: [AdminComponent, LoginComponent, ProductComponent, CategoryComponent, HeaderComponent, FooterComponent, DashboardComponent, UserComponent],
+  declarations: [AdminComponent, LoginComponent, ProductComponent, CategoryComponent, HeaderComponent, FooterComponent, DashboardComponent, UserComponent, AddProductComponent, EditProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -27,6 +30,6 @@ import { CategoryService } from './services/category.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers : [LoginService, UsersService, CategoryService]
+  providers : [LoginService, UsersService, CategoryService, ProductService]
 })
 export class AdminModule { }

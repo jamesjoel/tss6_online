@@ -1,0 +1,70 @@
+<div class="container mt-5">
+    <div class="row">
+        <Div class="col-md-12">
+        </Div>
+        <div class="col-md-6 offset-md-3">
+                    <div *ngIf="showMsg" class="alert alert-success">
+                        New Product Add Successfuly ! <a href="#" class="close" data-dismiss="alert">X</a>
+                    </div>
+            <form [formGroup]="product">
+            <div class="card">
+                <div class="card-header">
+                    
+                    Add New Product
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input formControlName="name" [ngClass]="{ 'is-invalid' : isSubmit && product.controls.name.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="isSubmit && product.controls.name.errors">
+                            <div *ngIf="product.controls.name.errors.required">
+                                Please Insert Product
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Price</label>
+                        <input formControlName="price" [ngClass]="{ 'is-invalid' : isSubmit && product.controls.price.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="isSubmit && product.controls.price.errors">
+                            <div *ngIf="product.controls.price.errors.required">
+                                Please Insert Product Price
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Discount</label>
+                        <input formControlName="discount" [ngClass]="{ 'is-invalid' : isSubmit && product.controls.discount.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="isSubmit && product.controls.discount.errors">
+                            <div *ngIf="product.controls.discount.errors.required">
+                                Please Insert Product Discount
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Category</label>
+                        <input formControlName="category" [ngClass]="{ 'is-invalid' : isSubmit && product.controls.category.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="isSubmit && product.controls.category.errors">
+                            <div *ngIf="product.controls.category.errors.required">
+                                Please Insert Product Category
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Detail</label>
+                        <input formControlName="detail" [ngClass]="{ 'is-invalid' : isSubmit && product.controls.detail.errors }" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="isSubmit && product.controls.detail.errors">
+                            <div *ngIf="product.controls.detail.errors.required">
+                                Please Insert Product Detail
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" (click)='submit()' value="Add" class="btn btn-success" />
+                    
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

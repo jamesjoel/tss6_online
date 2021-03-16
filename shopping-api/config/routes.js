@@ -11,6 +11,7 @@ routes.use("/api/user", require("../routes/User"));
 routes.use("/api/admin/login", require("../routes/AdminLogin"));
 routes.use("/api/admin/users", admin_backdoor, require("../routes/Users"));
 routes.use("/api/admin/category", admin_backdoor, require("../routes/Category"));
+routes.use("/api/admin/product", admin_backdoor, require("../routes/Product"));
 
 
 

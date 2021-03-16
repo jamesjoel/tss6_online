@@ -9,6 +9,8 @@ import  { BackdoorGuard } from './guards/backdoor.guard';
 import { UserComponent } from './pages/user/user.component';
 
 import { AfterloginGuard } from './guards/afterlogin.guard';
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
  
 const routes: Routes = [
   {
@@ -29,6 +31,16 @@ const routes: Routes = [
         path : "product",
         canActivate : [BackdoorGuard],
         component : ProductComponent
+      },
+      {
+        path : "product/add",
+        canActivate : [BackdoorGuard],
+        component : AddProductComponent
+      },
+      { 
+        path : "product/edit/:id",
+        canActivate : [BackdoorGuard],
+        component : EditProductComponent
       },
       {
         path : "category",
