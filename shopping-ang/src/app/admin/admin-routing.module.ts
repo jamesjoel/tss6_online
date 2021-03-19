@@ -11,6 +11,7 @@ import { UserComponent } from './pages/user/user.component';
 import { AfterloginGuard } from './guards/afterlogin.guard';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
+import { StudentComponent } from './pages/student/student.component';
  
 const routes: Routes = [
   {
@@ -46,6 +47,11 @@ const routes: Routes = [
         path : "category",
         canActivate : [BackdoorGuard],
         component : CategoryComponent
+      },
+      {
+        path : "student",
+        canActivate : [BackdoorGuard],
+        component : StudentComponent
       },
       {
         path : "users",

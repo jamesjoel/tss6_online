@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <table appHello class="table table-dark table-bordered">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Fee</th>
+                    <th>Discount</th>
+                    <th>Gender</th>
+                </tr>
+                <tr *ngFor="let s of student; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ s.name }}</td>
+                    <td>{{ s.age }}</td>
+                    <td>{{ s.fee | currency :'&#8377;' }}</td>
+                    <td>{{ s.fee | discount : s.gender : s.age | currency : '&#8377;' }}</td>
+                    <td>{{ s.gender }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<br />
+<Br />
+<!-- <div class="container">
+    <pre>{{ a | json }}</pre>
+    <h1 [ngClass]="{'myclass' : a}" (click)="demo()">hello world</h1>
+</div> -->
+<div class="container">
+    <p appTest>hello indore</p>
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="container">
+    <h3 appHello>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, excepturi laudantium porro necessitatibus enim eos? Odio est ea et omnis tenetur maxime delectus harum illo dolorum, provident ab soluta. Non.</h3>
+</div>

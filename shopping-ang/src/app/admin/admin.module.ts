@@ -20,9 +20,13 @@ import { CategoryService } from './services/category.service';
 import { ProductService } from './services/product.service';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
+import { StudentComponent } from './pages/student/student.component';
+import { DiscountPipe } from './pipes/discount.pipe';
+import { HelloDirective } from './directives/hello.directive';
+import { TestDirective } from './directives/test.directive';
 
 @NgModule({
-  declarations: [AdminComponent, LoginComponent, ProductComponent, CategoryComponent, HeaderComponent, FooterComponent, DashboardComponent, UserComponent, AddProductComponent, EditProductComponent],
+  declarations: [AdminComponent, LoginComponent, ProductComponent, CategoryComponent, HeaderComponent, FooterComponent, DashboardComponent, UserComponent, AddProductComponent, EditProductComponent, StudentComponent, DiscountPipe, HelloDirective, TestDirective],
   imports: [
     CommonModule,
     AdminRoutingModule,
