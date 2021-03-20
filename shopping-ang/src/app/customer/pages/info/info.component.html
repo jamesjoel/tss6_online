@@ -1,0 +1,29 @@
+<Br />
+<br />
+<p #x>Shubham</p>
+
+<button (click)="demo(x)">Ok</button>
+
+<h5 #y (click)="demo2(y)">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores id vitae maiores laboriosam quia temporibus ipsum eveniet. Commodi earum sint id rerum exercitationem debitis velit, facere odio quos tempora explicabo!</h5>
+
+<input type="text" #z (mouseover)="demo3(z)" />
+<br />
+<img src="./assets/images/1.jpg" height="50" #img (click)="demo4(img)"/>
+
+
+<Br />
+<Br />
+
+<input type="file" #file/>
+<Br />
+<button (click)="upload(file)">Upload</button>
+<br />
+<br />
+<span *ngFor="let x of arr">
+
+    <img src="{{ x }}" height="200" width="200" />
+</span>
+<Br />
+<Br />
+<Br />
+<Br />
