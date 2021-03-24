@@ -14,6 +14,12 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(upload());
 
+app.post("/api/add", (req, res)=>{
+    console.log(JSON.parse(req.body.formdata));
+    console.log(req.files);
+})
+
+
 app.post("/api/upload", (req, res)=>{
     // console.log(req.files);
     var file = req.files.image;

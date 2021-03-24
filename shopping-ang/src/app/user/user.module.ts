@@ -21,9 +21,10 @@ import { LoginService } from './services/login.service';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UserService } from './services/user.service';
+import { DemoPipe } from './pipe/demo.pipe';
 
 @NgModule({
-  declarations: [UserComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent, SignupComponent, HeaderComponent, FooterComponent, ProductBoxComponent, DashboardComponent, ProfileComponent],
+  declarations: [UserComponent, HomeComponent, AboutComponent, ContactComponent, LoginComponent, SignupComponent, HeaderComponent, FooterComponent, ProductBoxComponent, DashboardComponent, ProfileComponent, DemoPipe],
   imports: [
     CommonModule,
     UserRoutingModule,

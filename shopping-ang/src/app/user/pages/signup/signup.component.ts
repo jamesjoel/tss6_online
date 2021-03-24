@@ -4,6 +4,11 @@ import { conLength, conNum, chekPass } from '../../../helper/validation.helper';
 import { SignupService } from '../../services/signup.service';
 import { Router } from '@angular/router';
 
+interface Stu{
+  name : String,
+  age : Number,
+  city : String
+}
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +16,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+
+  obj:Stu={
+    name : "",
+    age : null,
+    city : ""
+  }
+
+
+
 
   userReg : FormGroup;
   submitCheck = false;

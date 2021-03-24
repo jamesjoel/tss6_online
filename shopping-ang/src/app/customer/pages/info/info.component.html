@@ -14,7 +14,7 @@
 <Br />
 <Br />
 
-<input type="file" #file/>
+<input type="file" #file (change)="upload(file)"/>
 <Br />
 <button (click)="upload(file)">Upload</button>
 <br />

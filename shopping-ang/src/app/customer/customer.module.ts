@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerComponent } from './customer.component';
 import { InfoComponent } from './pages/info/info.component';
+import { AddComponent } from './pages/add/add.component';
 
 
 @NgModule({
-  declarations: [CustomerComponent, InfoComponent],
+  declarations: [CustomerComponent, InfoComponent, AddComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class CustomerModule { }

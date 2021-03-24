@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+/*
+  obj={
+    name : "",
 
+  }
+
+
+*/
 
 const routes: Routes = [
   {
     path : "",
+    
     loadChildren : ()=> import("./user/user.module").then(module1 => module1.UserModule)
     // lazy loading
   },
