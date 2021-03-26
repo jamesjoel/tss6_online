@@ -10,35 +10,20 @@ export class CategoryService {
   constructor(private _http : HttpClient) { }
 
   getAll(){
-    return this._http.get<any>(this.apiUrl, 
-      {
-        headers : { Authorization : localStorage.getItem("adminToken")}
-      });
+    return this._http.get<any>(this.apiUrl);
   }
   get(id){ //5
-    return this._http.get<any>(this.apiUrl+id, 
-      {
-        headers : { Authorization : localStorage.getItem("adminToken")}
-      });
+    return this._http.get<any>(this.apiUrl+id);
   }
 
   add(obj){
-    return this._http.post<any>(this.apiUrl, obj, 
-      {
-        headers : { Authorization : localStorage.getItem("adminToken")}
-      });
+    return this._http.post<any>(this.apiUrl, obj);
   }
 
   update(obj, id){
-    return this._http.put<any>(this.apiUrl+id, obj,
-      {
-        headers : { Authorization : localStorage.getItem("adminToken")}
-      });
+    return this._http.put<any>(this.apiUrl+id, obj);
   }
   delete(id){
-    return this._http.delete<any>(this.apiUrl+id, 
-      {
-        headers : { Authorization : localStorage.getItem("adminToken")}
-      });
+    return this._http.delete<any>(this.apiUrl+id);
   }
 }

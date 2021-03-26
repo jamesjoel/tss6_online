@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +24,8 @@ import { StudentComponent } from './pages/student/student.component';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { HelloDirective } from './directives/hello.directive';
 import { TestDirective } from './directives/test.directive';
+import { TokenInterceptor } from './helper/token.interceptor';
+
 
 @NgModule({
   declarations: [AdminComponent, LoginComponent, ProductComponent, CategoryComponent, HeaderComponent, FooterComponent, DashboardComponent, UserComponent, AddProductComponent, EditProductComponent, StudentComponent, DiscountPipe, HelloDirective, TestDirective],
@@ -34,6 +36,8 @@ import { TestDirective } from './directives/test.directive';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers : [LoginService, UsersService, CategoryService, ProductService]
+  providers : [LoginService, UsersService, CategoryService, ProductService,
+    { provide : HTTP_INTERCEPTORS, useClass : TokenInterceptor, multi : true }
+  ]
 })
 export class AdminModule { }
